@@ -5,7 +5,7 @@ using MVCStockAreas.Models;
 
 namespace MVCStockAreas.Areas.Admin.Controllers
 {
-	[Authorize]
+	[Authorize] //login işlemi yapılmadan erişimi engeller
 	[Area("Admin")] //bu controller admin areası altında çalışacak bilgisini atıyoruz
 
 	public class UsersController : Controller
