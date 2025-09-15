@@ -48,7 +48,7 @@ namespace MVCStockAreas.Controllers
 				var kullaniciKimligi = new ClaimsIdentity(haklar, "Index"); //kullanýcý için bir kimlik oluþturduk
 				ClaimsPrincipal claimsPrincipal = new(kullaniciKimligi); //bu sýnýftan bir nesne oluþturup bilgilerde saklý haklar ile kural oluþturulabilir
 				await HttpContext.SignInAsync(claimsPrincipal); //yukarýdaki yetkilerle sisteme giriþ yaptýk
-				return RedirectToAction("Index", "Users");
+				return RedirectToAction("Index", "Admin");
 			}
 			else
 				@TempData["Message"] = "<div class='alert alert-danger'>Giriþ Baþarýsýz</div>";
@@ -66,5 +66,14 @@ namespace MVCStockAreas.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+
+		//LogOut action olmazsa sayfa admin giriþ açýk kalýyor ve tekrar giriþ istemiyor
+		public ActionResult LogOut() //çýkýþ yap aktivasyonu : layout
+		{
+			//FormsAuthentication.SignOut(); //.net faramework mvc çýkýþ
+			HttpContext.SignOutAsync();
+			//Session.Abandon(); //býrakmak, terketmek
+			return RedirectToAction("Index", "Home");
+		}
+	}
 }
