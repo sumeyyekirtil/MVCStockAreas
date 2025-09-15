@@ -1,15 +1,14 @@
 ﻿@model MVCStockAreas.Models.Category
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Kategori Detay";
 }
 
-<h1>Details</h1>
+<h4>Kategori Detay</h4>
 
 <div>
-    <h4>Category</h4>
     <hr />
-    <dl class="row">
+    <dl class="row table-hover">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -37,6 +36,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Düzenle</a> |
+    <a asp-action="Index">Listeye Dön</a>
 </div>

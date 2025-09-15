@@ -4,8 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using MVCStockAreas.Models;
 
 namespace MVCStockAreas.Areas.Admin.Controllers
-{   [Authorize]
-	[Area("Admin")]
+{   
+	[Authorize] //Login işlemi olmadan girişi engeller
+	[Area("Admin")] //area kullandığımızı belirttiğimiz alan yoksa 404 not found hatası alınır
 	public class CategoriesController : Controller
 	{
 		private readonly Context _context;
