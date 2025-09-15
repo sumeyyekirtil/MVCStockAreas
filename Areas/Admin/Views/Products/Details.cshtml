@@ -1,15 +1,14 @@
 ﻿@model MVCStockAreas.Models.Product
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detay";
 }
 
-<h1>Details</h1>
+<h4>Ürün Detay</h4>
 
 <div>
-    <h4>Product</h4>
     <hr />
-    <dl class="row">
+    <dl class="row table-hover">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -43,6 +42,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Düzenle</a> |
+    <a asp-action="Index">Listeye Dön</a>
 </div>
