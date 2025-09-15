@@ -1,14 +1,12 @@
 ﻿@model MVCStockAreas.Models.User
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Düzenle";
 }
 
-<h1>Edit</h1>
-
-<h4>User</h4>
+<h1>Kullanıcı Düzenle</h1>
 <hr />
-<div class="row">
+<div class="row table-hover">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -66,6 +64,5 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Listeye Dön</a>
 </div>
-
