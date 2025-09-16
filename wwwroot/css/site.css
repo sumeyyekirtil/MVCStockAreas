@@ -1,10 +1,10 @@
 html {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -15,11 +15,17 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  
 }
 
 body {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     background-color: #7979e9;
+    font-family: Gabriola;
+    font-size: 20px;
+    font-style: italic;
+    object-fit: contain;
+    max-height: 100%
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -36,7 +42,7 @@ li{
 }
 h2 {
     text-align: center;
-    padding: 2em;
+    padding: 2rem;
     color: darkred;
 }
 h1{
@@ -45,4 +51,7 @@ h1{
 input{
     height: 50px;
     width: 15em; 
+}
+a{
+    color: darkblue
 }
