@@ -52,6 +52,7 @@ input{
     height: 50px;
     width: 15em; 
 }
-a{
-    color: darkblue
+a {
+    color: darkblue;
+    font-size: larger;
 }
