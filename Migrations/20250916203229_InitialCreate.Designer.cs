@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCStockAreas.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20250915132346_InitialCreate")]
+    [Migration("20250916203229_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -99,6 +99,10 @@ namespace MVCStockAreas.Migrations
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
 
+                    b.Property<string>("Image")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -132,7 +136,7 @@ namespace MVCStockAreas.Migrations
                         new
                         {
                             Id = 1,
-                            Birthday = new DateTime(2025, 9, 15, 16, 23, 45, 315, DateTimeKind.Local).AddTicks(6642),
+                            Birthday = new DateTime(2025, 9, 16, 23, 32, 28, 603, DateTimeKind.Local).AddTicks(544),
                             Email = "admin@gmail.com",
                             IdentificationNumber = "12345678911",
                             Name = "User",
