@@ -7,10 +7,11 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Security.Claims;
 
+//for add Migration -> package manage -> add-migration InitialCreate (migration eklendi) -> lvl2 : update-database (sql data gönderildi) - EF
+
 //login page
 namespace MVCStockAreas.Controllers
 {
-
     //admin deki contoller a oturum açmayan giremeyecek
     //home control : login
     //logini geçen admine geçebilecek

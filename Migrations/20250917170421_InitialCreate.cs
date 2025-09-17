@@ -37,6 +37,7 @@ namespace MVCStockAreas.Migrations
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     RecordDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -56,7 +57,6 @@ namespace MVCStockAreas.Migrations
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IdentificationNumber = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
                     Birthday = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Image = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Nickname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     RepeatPassword = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -68,8 +68,8 @@ namespace MVCStockAreas.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Birthday", "Email", "IdentificationNumber", "Image", "Name", "Nickname", "Password", "Phone", "RepeatPassword", "Surname" },
-                values: new object[] { 1, new DateTime(2025, 9, 16, 23, 32, 28, 603, DateTimeKind.Local).AddTicks(544), "admin@gmail.com", "12345678911", null, "User", "admin", "123", "2626262622", "123", "Admin" });
+                columns: new[] { "Id", "Birthday", "Email", "IdentificationNumber", "Name", "Nickname", "Password", "Phone", "RepeatPassword", "Surname" },
+                values: new object[] { 1, new DateTime(2025, 9, 17, 20, 4, 19, 966, DateTimeKind.Local).AddTicks(9857), "admin@gmail.com", "12345678911", "User", "admin", "123", "2626262622", "123", "Admin" });
         }
 
         /// <inheritdoc />
