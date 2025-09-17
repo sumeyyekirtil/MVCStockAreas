@@ -46,7 +46,7 @@ namespace MVCStockAreas.Areas.Admin.Controllers
 				{
 					if (Image is not null)
 					{
-						collection.Image = FileHelper.FileLoader(Image);
+						//collection.Image = FileHelper.FileLoader(Image);
 					}
 					//crud ekleme
 					_context.Products.Add(collection);
@@ -78,7 +78,7 @@ namespace MVCStockAreas.Areas.Admin.Controllers
 			{
 				if (Image is not null)
 				{
-					collection.Image = FileHelper.FileLoader(Image);
+					//collection.Image = FileHelper.FileLoader(Image);
 				}
 				//crud güncelleme
 				_context.Products.Update(collection);
