@@ -30,8 +30,6 @@ namespace MVCStockAreas.Models
 		[Display(Name = "Doğum Tarihi")]
 		public DateTime? Birthday { get; set; }
 
-		[Display(Name = "Resim"), StringLength(100)]
-		public string? Image { get; set; }
 
 		[Display(Name = "Kullanıcı Adı")]
 		public string Nickname { get; set; }
