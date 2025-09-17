@@ -57,14 +57,10 @@ namespace MVCStockAreas.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Image")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -133,7 +129,7 @@ namespace MVCStockAreas.Migrations
                         new
                         {
                             Id = 1,
-                            Birthday = new DateTime(2025, 9, 17, 20, 4, 19, 966, DateTimeKind.Local).AddTicks(9857),
+                            Birthday = new DateTime(2025, 9, 18, 0, 27, 21, 34, DateTimeKind.Local).AddTicks(29),
                             Email = "admin@gmail.com",
                             IdentificationNumber = "12345678911",
                             Name = "User",

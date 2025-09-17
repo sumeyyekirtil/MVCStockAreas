@@ -34,10 +34,9 @@ namespace MVCStockAreas.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RecordDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -69,7 +68,7 @@ namespace MVCStockAreas.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Birthday", "Email", "IdentificationNumber", "Name", "Nickname", "Password", "Phone", "RepeatPassword", "Surname" },
-                values: new object[] { 1, new DateTime(2025, 9, 17, 20, 4, 19, 966, DateTimeKind.Local).AddTicks(9857), "admin@gmail.com", "12345678911", "User", "admin", "123", "2626262622", "123", "Admin" });
+                values: new object[] { 1, new DateTime(2025, 9, 18, 0, 27, 21, 34, DateTimeKind.Local).AddTicks(29), "admin@gmail.com", "12345678911", "User", "admin", "123", "2626262622", "123", "Admin" });
         }
 
         /// <inheritdoc />
