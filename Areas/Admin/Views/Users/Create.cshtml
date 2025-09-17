@@ -56,7 +56,7 @@
                 <input asp-for="RepeatPassword" class="form-control" />
                 <span asp-validation-for="RepeatPassword" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <input type="submit" value="Yeni Oluştur" class="btn btn-primary" />
             </div>
         </form>
@@ -64,5 +64,5 @@
 </div>
 
 <div>
-    <a asp-action="Index">Listeye Dön</a>
+    <a asp-area="Admin" asp-controller="Main" asp-action="Index">Listeye Dön</a>
 </div>

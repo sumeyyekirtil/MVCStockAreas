@@ -28,6 +28,12 @@ body {
     max-height: 100%
 }
 
+#admin {
+    background-color: #aa7dbb;
+    margin-bottom: 30px;
+    object-fit: contain;
+}
+
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
