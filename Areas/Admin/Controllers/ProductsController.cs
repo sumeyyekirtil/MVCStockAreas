@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MVCStockAreas.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MVCStockAreas.Areas.Admin.Controllers
 {
@@ -10,27 +11,26 @@ namespace MVCStockAreas.Areas.Admin.Controllers
 	public class ProductsController : Controller
 	{
 		private readonly Context _context;
-
 		public ProductsController(Context context)
 		{
 			_context = context;
 		}
 
 		// GET: ProductsController
-		public ActionResult Index()
+		public ActionResult Index() //add view - razor - list (giriş sayfası)
 		{
 			return View(_context.Products);
 		}
 
 		// GET: ProductsController/Details/5
-		public ActionResult Details(int id)
+		public ActionResult Details(int id) //add view - razor - details
 		{
 			var bilgi = _context.Products.Find(id); //id ye ulaşıp kayıt detaylarını yazdırma işlemi
 			return View(bilgi);
 		}
 
 		// GET: ProductsController/Create
-		public ActionResult Create()
+		public ActionResult Create() //add view - razor - create
 		{
 			return View();
 		}
@@ -38,12 +38,16 @@ namespace MVCStockAreas.Areas.Admin.Controllers
 		// POST: ProductsController/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create(Product collection)
+		public ActionResult Create(Product collection, IFormFile? Image)
 		{
-			if (ModelState.IsValid)
+			if (ModelState.IsValid) //model içi boş ise döngüye girme
 			{
 				try
 				{
+					if (Image is not null)
+					{
+						collection.Image = FileHelper.FileLoader(Image);
+					}
 					//crud ekleme
 					_context.Products.Add(collection);
 					_context.SaveChanges();
@@ -58,46 +62,47 @@ namespace MVCStockAreas.Areas.Admin.Controllers
 		}
 
 		// GET: ProductsController/Edit/5
-		public ActionResult Edit(int id)
+		public ActionResult Edit(int id) //add view - razor - edit
 		{
-			var urun = _context.Products.Find(id); //uyeler tablosundan route dan gelen id ile eşleşen kaydı bul ve ekrana gönder.
-			return View(urun);
+			return View(_context.Products.Find(id)); //verileri db getirme 2. yol
 		}
 
 		// POST: ProductsController/Edit/5
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit(int id, Product collection)
+		public ActionResult Edit(int id, Product collection, IFormFile? Image)
 		{
-			if (ModelState.IsValid)
+			if (ModelState.IsValid) //model içi boş ise döngüye girme
+				return View(collection);
+			try
 			{
-				try
+				if (Image is not null)
 				{
-					//crud güncelleme
-					_context.Products.Update(collection);
-					_context.SaveChanges();
-					return RedirectToAction(nameof(Index));
+					collection.Image = FileHelper.FileLoader(Image);
 				}
-				catch
-				{
-					ModelState.AddModelError("", "Hata Oluştu!");
-				}
+				//crud güncelleme
+				_context.Products.Update(collection);
+				_context.SaveChanges();
+				return RedirectToAction(nameof(Index));
+			}
+			catch
+			{
+				ModelState.AddModelError("", "Hata Oluştu!");
 			}
 			return View(collection);
 		}
 
 		// GET: ProductsController/Delete/5
-		public ActionResult Delete(int id)
+		public ActionResult Delete(int id) //add view - razor - delete
 		{
-			var urun = _context.Products.Find(id); //id ye ulaşıp kayıt detaylarını yazdırma işlemi
-			return View(urun);
+			return View(_context.Products.Find(id));
 		}
 
 		// POST: ProductsController/Delete/5
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Delete(int id, Product collection)
-		{
+		{//özellikle resim silmek için kontrol kodu girilmesine gerek yok, id silme işlemi yapılacak
 			try
 			{
 				//crud silme

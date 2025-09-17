@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<MVCStockAreas.Models.Product>
 
 @{
-    ViewData["Title"] = "Ürünler";
+    ViewData["Title"] = "Index";
 }
 
-<h4>Ürün Listesi</h4>
+<h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Yeni Ekle</a>
+    <a asp-action="Create">Create New</a>
 </p>
-<table class="table table-hover">
+<table class="table">
     <thead>
         <tr>
             <th>
@@ -23,6 +23,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.RecordDate)
@@ -46,12 +49,15 @@
                 @Html.DisplayFor(modelItem => item.Stock)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.RecordDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detay</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
