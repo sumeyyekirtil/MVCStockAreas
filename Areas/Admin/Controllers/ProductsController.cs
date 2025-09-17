@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MVCStockAreas.Models;
+using MVCStockAreas.Tools;
 using static System.Net.Mime.MediaTypeNames;
 
+//product page
 namespace MVCStockAreas.Areas.Admin.Controllers
 {
 	[Authorize] //login onaylanmayan kullanıcının girişini engeller
@@ -46,7 +48,7 @@ namespace MVCStockAreas.Areas.Admin.Controllers
 				{
 					if (Image is not null)
 					{
-						//collection.Image = FileHelper.FileLoader(Image);
+						collection.Image = FileHelper.FileLoader(Image);
 					}
 					//crud ekleme
 					_context.Products.Add(collection);
@@ -73,21 +75,22 @@ namespace MVCStockAreas.Areas.Admin.Controllers
 		public ActionResult Edit(int id, Product collection, IFormFile? Image)
 		{
 			if (ModelState.IsValid) //model içi boş ise döngüye girme
-				return View(collection);
-			try
 			{
-				if (Image is not null)
+				try
 				{
-					//collection.Image = FileHelper.FileLoader(Image);
+					if (Image is not null)
+					{
+						collection.Image = FileHelper.FileLoader(Image);
+					}
+					//crud ekleme
+					_context.Products.Update(collection);
+					_context.SaveChanges();
+					return RedirectToAction(nameof(Index));
 				}
-				//crud güncelleme
-				_context.Products.Update(collection);
-				_context.SaveChanges();
-				return RedirectToAction(nameof(Index));
-			}
-			catch
-			{
-				ModelState.AddModelError("", "Hata Oluştu!");
+				catch
+				{
+					ModelState.AddModelError("", "Hata Oluştu!");
+				}
 			}
 			return View(collection);
 		}
