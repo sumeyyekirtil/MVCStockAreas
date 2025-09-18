@@ -10,15 +10,17 @@ namespace MVCStockAreas.Models
 
 		[Required(ErrorMessage = "Ad alanı boş geçilemez!"), StringLength(50)] //her attribute altındaki property için geçerlidir 
 																			   //String uzunluğu en fazla 50 karakter olsun
+		
+		[Display(Name = "İsim")]
 		public string Name { get; set; }
 
-		[Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(50)]
+		[Required(ErrorMessage = "{0} alanı boş geçilemez!"), Display(Name = "Soyisim"), StringLength(50)]
 		public string? Surname { get; set; }
 
-		[EmailAddress(ErrorMessage = "Geçersiz Email Adresi!"), StringLength(50)]
+		[EmailAddress(ErrorMessage = "Geçersiz Email Adresi!"), Display(Name = "Mail"), StringLength(50)]
 		public string? Email { get; set; }
 
-		[Phone(ErrorMessage = "Geçersiz Telefon Formatı!")]
+		[Phone(ErrorMessage = "Geçersiz Telefon Formatı!"), Display(Name = "Telefon")]
 		public string? Phone { get; set; }
 
 		[Display(Name = "TC Kimlik Numarası"), StringLength
@@ -38,6 +40,8 @@ namespace MVCStockAreas.Models
 		[StringLength(15, ErrorMessage = "{0} {2} Karakterden Az Olamaz!", MinimumLength = 3)]
 		[Compare("Password")] //sifre property si ile karşılaştır
 		public string Password { get; set; }
+
+		[Display(Name = "Şifre Tekrarı")]
 		public string? RepeatPassword { get; set; }
 	}
 }
