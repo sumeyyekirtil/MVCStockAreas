@@ -6,8 +6,9 @@
 
 <h4>Ürün Detay</h4>
 
-<div>
+<div class="create bg-light-subtle">
     <hr />
+    <br />
     <dl class="row table-hover">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -41,6 +42,7 @@
         </dd>
     </dl>
 </div>
+<br />
 <div>
     <a asp-action="Edit" class="mt-4" asp-route-id="@Model?.Id">Düzenle</a> |
     <a asp-action="Index">Listeye Geri Dön</a>

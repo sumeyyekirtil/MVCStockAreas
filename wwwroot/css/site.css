@@ -65,13 +65,15 @@ a {
     color: darkblue;
     font-size: larger;
 }
-.user {
+.create {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 5px;
+    margin: 6px;
     padding-inline-start: 3px;
     outline: dashed 2px darkblue;
+    font-size : larger;
 }
 .foot {
     display: grid;
