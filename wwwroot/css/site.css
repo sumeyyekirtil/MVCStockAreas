@@ -59,7 +59,7 @@ h1{
 }
 input{
     height: 50px;
-    width: 15em; 
+    width: 15em;
 }
 a {
     color: darkblue;
@@ -72,4 +72,8 @@ a {
     margin: 5px;
     padding-inline-start: 3px;
     outline: dashed 2px darkblue;
+}
+.foot {
+    display: grid;
+    justify-content: center
 }
