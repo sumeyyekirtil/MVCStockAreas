@@ -79,3 +79,8 @@ a {
     display: grid;
     justify-content: center
 }
+
+p {
+    font-size : larger;
+    color: darkred;
+}
