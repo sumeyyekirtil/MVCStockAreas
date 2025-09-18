@@ -65,9 +65,10 @@ a {
     color: darkblue;
     font-size: larger;
 }
-.user{
+.user {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 5px;
     padding-inline-start: 3px;
     outline: dashed 2px darkblue;
