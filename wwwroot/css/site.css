@@ -53,6 +53,7 @@ h2 {
 }
 h4{
     color: seashell;
+    font-family: 'Bookman Old Style'
 }
 h1{
     color: aliceblue
@@ -83,4 +84,10 @@ a {
 p {
     font-size : larger;
     color: darkred;
+}
+
+h3{
+    color: darkblue;
+    font-size: 30px;
+    text-align: center
 }
