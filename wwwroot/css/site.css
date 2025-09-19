@@ -95,3 +95,13 @@ h3{
     font-size: 30px;
     text-align: center
 }
+
+#login {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+}
