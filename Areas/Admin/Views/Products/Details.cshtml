@@ -6,10 +6,9 @@
 
 <h4>Ürün Detay</h4>
 
-<div class="create bg-light-subtle">
+<div class="create bg-dark-subtle mt-4">
     <hr />
-    <br />
-    <dl class="row table-hover">
+    <dl class="row table-hover mt-3">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -41,9 +40,9 @@
             @Html.DisplayFor(model => model.RecordDate)
         </dd>
     </dl>
-</div>
-<br />
-<div>
-    <a asp-action="Edit" class="mt-4" asp-route-id="@Model?.Id">Düzenle</a> |
-    <a asp-action="Index">Listeye Geri Dön</a>
+    <br />
+    <div class="foot text-center" style="justify-items: center">
+        <a class="btn btn-success mb-5 mt-5" asp-action="Edit" asp-route-id="@Model?.Id">Düzenle</a>
+        <a class="btn btn-dark mb-5" asp-action="Index">Listeye Geri Dön</a>
+    </div>
 </div>

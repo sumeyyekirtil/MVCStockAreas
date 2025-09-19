@@ -6,8 +6,8 @@
 
 <h4>Düzenle</h4>
 <hr />
-<div class="row table-hover table-striped" style="justify-content: center;">
-    <div class="col-md-7">
+<div class="row table-hover" style="justify-content: center;">
+    <div class="col-md-7 bg-gradient">
         <form class="create" asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -41,13 +41,13 @@
                 <input asp-for="RecordDate" class="form-control" />
                 <span asp-validation-for="RecordDate" class="text-danger"></span>
             </div>
-            <div class="form-group mt-4">
+            <div class="form-group mt-4 mb-3">
                 <input type="submit" value="Kaydet" class="btn btn-danger" />
             </div>
         </form>
     </div>
 </div>
 <br />
-<div class="foot">
-    <a asp-action="Index">Listeye Geri Dön</a>
+<div>
+    <a class="btn btn-lg foot" asp-action="Index">Listeye Geri Dön</a>
 </div>

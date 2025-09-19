@@ -4,56 +4,57 @@
     ViewData["Title"] = "Ürünler";
 }
 
-<h4>Ürün İçerik</h4>
+<h4>Ürünler Tablosu</h4>
 
 <p>
-    <a asp-action="Create">Yeni Ekle</a>
+    <a class="btn btn-danger mt-2 mb-2" asp-action="Create">Yeni Ekle</a>
 </p>
-<table class="table table-hover">
+<table class="table table-hover table-danger">
     <thead>
         <tr>
-            <th>
+            <th style="color: crimson">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            <th style="color: crimson">
                 @Html.DisplayNameFor(model => model.Price)
             </th>
-            <th>
+            <th style="color: crimson">
                 @Html.DisplayNameFor(model => model.Stock)
             </th>
-            <th>
+            <th style="color: crimson">
                 @Html.DisplayNameFor(model => model.Image)
             </th>
-            <th>
+            <th style="color: crimson">
                 @Html.DisplayNameFor(model => model.RecordDate)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
-            <td>
-                    <img src="/Images/@item.Image" alt="@item.Image Yolu" height="36" /> @*gösterim şekli belirtiyoruz*@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RecordDate)
-            </td>
-            <td class="mt-4">
-                <a asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detay</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                    <img src="/Images/@item.Image" alt="@item.Image Yolu" height="60" /> @*gösterim şekli belirtiyoruz*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecordDate)
+                </td>
+                <td class="mt-4">
+                    <a class="btn btn-outline-success me-1 ms-4" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
+                    <a class="btn btn-outline-primary me-1 ms-1" asp-action="Details" asp-route-id="@item.Id">Detay</a> |
+                    <a class="btn btn-outline-danger ms-1" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
