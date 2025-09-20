@@ -1,21 +1,20 @@
 html {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 18px;
-  }
+    html {
+        font-size: 18px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
-  
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -35,39 +34,44 @@ body {
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
 }
 
-li{
+li {
     margin: 5px;
 }
-h2 {
+
+h2 { /*baþlýklar için*/
     text-align: center;
     padding: 2rem;
     color: darkred;
 }
-h4{
+
+h4 {
     color: seashell;
     font-family: 'Bookman Old Style'
 }
-h1{
+
+h1 {
     color: aliceblue
 }
 
-input{
-    height: 5 0px;
+input { /*yazý boþluklarý için*/
+    height: 50px;
     width: 6em;
 }
+
 a {
     color: darkblue;
     font-size: larger;
 }
-.create {
+
+.create { /*for in controller view */
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -75,9 +79,10 @@ a {
     margin: 6px;
     padding-inline-start: 3px;
     outline: dashed 2px darkblue;
-    font-size : larger;
+    font-size: larger;
 }
-.foot {
+
+.foot { /*for in view footer */
     display: grid;
     justify-content: center;
     font-weight: bold;
@@ -85,18 +90,18 @@ a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-p {
-    font-size : larger;
+p { /*for in view paragraph */
+    font-size: larger;
     color: darkred;
 }
 
-h3{
+h3 {
     color: darkblue;
     font-size: 30px;
     text-align: center
 }
 
-#login {
+#login { /* for in login view */
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -104,4 +109,25 @@ h3{
     margin-left: auto;
     margin-right: auto;
     width: 20rem;
+}
+
+.card { /* for in privacy view */
+    background-color: #c0e7ff;
+    font-style: initial;
+    font-size: larger;
+    font-family: Tahoma;
+    padding: 10px;
+    padding-right: 10px;
+    margin: 5px
+}
+
+.card p { /* for in privacy p */
+    color: black;
+    font-size: 16px;
+    margin: 5px;
+}
+    
+.card h3 {
+    font-size: 20px;
+    margin: 10px;
 }
